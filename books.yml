@@ -1,0 +1,33 @@
+Title:
+    css: null
+    xpath: '//span[contains(concat(" ",normalize-space(@class)," ")," a-size-extra-large ")]'
+    type: Text
+Description:
+    css: null
+    xpath: '//div[contains(concat(" ",normalize-space(@class)," ")," centerColumn ")]//div[contains(concat(" ",normalize-space(@class)," ")," a-expander-collapsed-height ")]//div[contains(concat(" ",normalize-space(@class)," ")," a-expander-content ")]'
+    type: Text
+Product_details:
+    css: null
+    xpath: '//div[contains(concat(" ",normalize-space(@class)," ")," a-section ")][contains(concat(" ",normalize-space(@class)," ")," feature ")]//div//li'
+    multiple: true
+    type: Text
+Product_info:
+    css: null
+    xpath: '//div[contains(concat(" ",normalize-space(@class)," ")," a-section ")][contains(concat(" ",normalize-space(@class)," ")," a-padding-base ")]//div[contains(concat(" ",normalize-space(@class)," ")," a-row ")]/div[contains(concat(" ",normalize-space(@class)," ")," a-section ")]'
+    multiple: true
+    type: Text
+Image:
+    css: '.imgTagWrapper img'
+    xpath: null
+    type: Attribute
+    attribute: data-a-dynamic-image
+Details:
+    css: null
+    xpath: '//div[contains(concat(" ",normalize-space(@class)," ")," a-row ")]/h3//span'
+    multiple: true
+    type: Text
+    format: Details
+About_the_author:
+    css: 'div.a-cardui-content p:nth-of-type(1)'
+    xpath: null
+    type: Text

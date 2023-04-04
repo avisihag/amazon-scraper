@@ -1,0 +1,66 @@
+Title:
+    css: null
+    xpath: '//span[contains(concat(" ",normalize-space(@class)," ")," a-size-large ")]'
+    type: Text
+Description:
+    css: null
+    xpath: '//div[contains(concat(" ",normalize-space(@class)," ")," centerColAlign ")]//span[contains(concat(" ",normalize-space(@class)," ")," a-list-item ")]'
+    multiple: true
+    type: Text
+Product_description:
+    css: null
+    xpath: '//div[contains(concat(" ",normalize-space(@class)," ")," a-row ")][contains(concat(" ",normalize-space(@class)," ")," feature ")]//p'
+    type: Text
+Product_details:
+    css: null
+    xpath: '//div[contains(concat(" ",normalize-space(@class)," ")," a-section ")][contains(concat(" ",normalize-space(@class)," ")," feature ")]//div//li'
+    multiple: true
+    type: Text
+Ingredients:
+    css: null
+    xpath: '//div[contains(concat(" ",normalize-space(@class)," ")," a-section ")][contains(concat(" ",normalize-space(@class)," ")," a-spacing-extra-large ")]//div[contains(concat(" ",normalize-space(@class)," ")," a-section ")][1]//p[2]'
+    type: Text
+Legal_Disclaimer:
+    css: null
+    xpath: '//div[contains(concat(" ",normalize-space(@class)," ")," a-section ")][contains(concat(" ",normalize-space(@class)," ")," a-spacing-extra-large ")]//div[contains(concat(" ",normalize-space(@class)," ")," a-section ")][2]//p[2]'
+    type: Text
+Product_info:
+    css: 'div.a-section.a-spacing-extra-large p:nth-of-type(2)'
+    xpath: null
+    multiple: true
+    type: Text
+Details:
+    css: null
+    xpath: '//div[contains(concat(" ",normalize-space(@class)," ")," a-section ")][contains(concat(" ",normalize-space(@class)," ")," a-spacing-extra-large ")]//div[contains(concat(" ",normalize-space(@class)," ")," a-section ")]//h4'
+    multiple: true
+    type: Text
+    format: Details
+Image:
+    css: '#imgTagWrapperId img[src], #main-image-container img[src]'
+    xpath: null
+    multiple: true
+    type: Attribute
+    attribute: src
+Technical_details:
+    css: 'div.a-expander-content th.a-color-secondary'
+    xpath: null
+    multiple: true
+    type: Text
+    format: TechnicalDetails
+Technical_values:
+    css: 'div.a-expander-content td.a-size-base'
+    xpath: null
+    multiple: true
+    type: Text
+Additional_info:
+    css: 'div.a-section div.a-section th.a-color-secondary'
+    xpath: null
+    multiple: true
+    type: Text
+    format: AdditionalInfo
+Additional_values:
+    css: 'div.a-section div.a-section td'
+    xpath: null
+    multiple: true
+    type: Text
+    format: AdditionalValues

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>scrapy - aiohttp detail scraper</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+    <link rel=stylesheet type=text/css href="{{ './static/css/custom.css' }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
+
+<script type="text/javascript">
+ $(function() {
+     $('#submitButton').click(function() {
+        $('#url-result').text("Loading...");
+         $.ajax({
+             type: "POST",
+             url: "/scrape",
+             data: JSON.stringify({'url' : $('#url').val(), 'category' : $('.category:checked').val()}),
+             success: returnSuccess,
+             dataType: 'json',
+             contentType: "application/json",
+         });
+     });
+});
+
+function returnSuccess(data, textStatus, jqXHR) {
+    if(data) {
+        $('#url-result').text(JSON.stringify(data.res, null, 3));
+        $('#url').val("");
+    } else {
+        $('#url-result').text("Please enter a URL!");
+    }
+}
+</script>
+
+<body>
+    <div id="wrap">
+        <header>
+           <h1 style="text-align:center;"><a href="">Scrapy</a></h1>
+           <p style="text-align:center;">amazon scraper demo</p>
+        </header>
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+                    <input type="text" name="url" id="url" class="form-control input-sm" placeholder="https://amazon.com/" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <h7>Select product category: </h7>
+                    <select id="category">
+                        <input type="radio" class="category" id="food" name="category" value="food">
+                        <label for="food">Food</label>
+                        <input type="radio" class="category" id="books" name="category" value="books">
+                        <label for="books">Books</label>
+                        <input type="radio" class="category" id="beauty" name="category" value="beauty">
+                        <label for="beauty">Beauty</label>
+                        <input type="radio" class="category" id="electronics" name="category" value="electronics">
+                        <label for="electronics">Electronics</label>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s4 offset-s4 center">
+                    <button id="submitButton" class="waves-effect waves-light btn-large blue darken-1">Scrape</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <div class="panel-footer">
+                        <h6 id="url-result">Enter URL</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
